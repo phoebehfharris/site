@@ -1,0 +1,15 @@
+(post
+ :title "Now"
+
+ (p [I've currently got a whole bunch of things on the go!])
+ (ul
+  (li [I'm just finishing my third year of a Computer Science
+           integrated master's at the University of Bristol,
+           and am currently doing a piece of HPC coursework in C.])
+  (li [I'm working on packaging the university's clifton SSH connection tool for Fedora Linux])
+  (li [I'm reading (and not understanding) Anti-Oedipus by Deleuze and Guattari])
+  (li [I'm messing around with Smalltalk])
+  (li [I'm brushing up on my German])
+  (li [I'm writing a professional website ;\)])
+  )
+ )

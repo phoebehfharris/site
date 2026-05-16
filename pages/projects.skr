@@ -1,0 +1,7 @@
+(post
+ :title "Projects"
+
+ (p [I've made a bunch of projects since I picked up computing as a hobby,
+          most of which are toys or uni projects. I intend to fill this out
+          with some more serious projects that I intend on people using.])
+ )
