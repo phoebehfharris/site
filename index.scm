@@ -29,5 +29,4 @@
      (li ,(icon-link "phoebeharris:fedora.im" "matrix:u/phoebeharris:fedora.im" "matrix.svg"))
      (li ,(icon-link "root@phoebeharris.xyz" "mailto:root@phoebeharris.xyz" "email.svg"))
      (li ,(icon-link "phoebe-hf-harris" "https://www.linkedin.com/in/phoebe-hf-harris/" "linkedin.svg")))
-
     ,(ugly-default-collection-template site title posts prefix)))
