@@ -1,0 +1,53 @@
+name: Deploy to pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Install GNU Guix
+        uses: PromyLOPh/guix-install-action@v1.6
+        with:
+          # Optional: Speeds up the action by skipping the `guix pull` step 
+          # if you don't need the absolute bleeding-edge version of Haunt.
+          pullAfterInstall: false
+
+      - name: Build site with Haunt
+        # guix shell creates an ephemeral environment with our tools, then executes haunt build
+        run: guix shell guile guile-haunt -- haunt build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Haunt outputs to the 'site/' directory by default
+          path: 'site/'
+          
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
