@@ -33,7 +33,7 @@ jobs:
 
       - name: Build site with Haunt
         # guix shell creates an ephemeral environment with our tools, then executes haunt build
-        run: guix shell guile guile-haunt -- haunt build
+        run: guix shell guile haunt -- haunt build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
