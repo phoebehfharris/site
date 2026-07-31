@@ -51,3 +51,29 @@ body {
 }
 
 }
+
+.icon-content {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    gap: 0.35em;
+}
+
+.icon-content img {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    vertical-aling: -0.125em;
+}
+
+.icon-content img {
+    filter: invert(1);
+}
+
+.links li {
+    display: inline;
+    margin-right: 2em;
+    padding: 3px;
+    border: 2px solid #f38ba8;
+    border-radius: 3px;
+}
