@@ -48,11 +48,12 @@
       #:domain domain
       #:default-metadata
       '((author . "Phoebe Harris")
-        (email  . "hello@phoebeharris.xyz"))
+        (email  . "root@phoebeharris.xyz"))
       #:readers (list commonmark-reader skribe-reader)
       #:builders (list (blog #:theme haunt-theme)
                        (flat-pages "pages" #:template (theme-layout haunt-theme))
                        ;; (static-page "index" haunt-theme "index.html" index)
                        (static-directory "css")
+                       (static-directory "static")
                        (atom-feed)
                        (atom-feeds-by-tag)))
