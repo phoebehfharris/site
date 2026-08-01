@@ -30,7 +30,8 @@ body {
     margin-right: 5%;
     background-color: light-dark(#eff1f5, #1e1e2e);
     color: light-dark(#4c4f69, #cdd6f4);
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Ubuntu-Regular", sans-serif;
+    font-size: 1.15em;
 }
 
 h1, h2 {
@@ -91,4 +92,12 @@ h3, h4, h5, h6 {
     padding: 3px;
     border: 2px solid #f38ba8;
     border-radius: 3px;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('/static/Ubuntu-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }

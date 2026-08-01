@@ -20,6 +20,10 @@
              (head
               (meta (@ (charset "utf-8")))
               (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
+              (link (@ (rel "preload")
+                       (type "font/woff2")
+                       (as "font")
+                       (href "/static/Ubuntu-Regular.woff2")))
               (link (@ (rel "alternate")
 		               (type "application/atom+xml")
 		               (title "Phoebe Harris")
@@ -27,6 +31,10 @@
               (link (@ (rel "stylesheet")
                        (href "/css/main.css")
                        ))
+              (link (@ (rel "me")
+                       (href "https://github.com/phoebehfharris")))
+              (link (@ (rel "me")
+                       (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/")))
               )
              (body
               (header (@ (class "header"))
