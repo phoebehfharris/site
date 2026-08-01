@@ -50,7 +50,6 @@ h3, h4, h5, h6 {
     }
 
     .header li {
-        margin-left: 1vw;
         margin-right: 1vw;
     }
 }
@@ -62,7 +61,6 @@ h3, h4, h5, h6 {
     }
 
     .header li {
-        margin-left: 2vw;
         margin-right: 2vw;
     }
 
@@ -83,15 +81,19 @@ h3, h4, h5, h6 {
 }
 
 .icon-content img {
-    filter: invert(1);
+    filter: invert(light-dark(0, 1));
+}
+
+ul.links {
+    padding: 0px;
 }
 
 .links li {
     display: inline;
     margin-right: 2em;
-    padding: 3px;
-    border: 2px solid #f38ba8;
-    border-radius: 3px;
+    padding: 5px;
+    border: 2px solid light-dark(#d20f39, #f38ba8);
+    border-radius: 5px;
 }
 
 @font-face {
