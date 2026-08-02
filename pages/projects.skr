@@ -1,7 +1,51 @@
+(use-modules (utils) (haunt html))
+
 (post
  :title "Projects"
 
  (p [I've made a bunch of projects since I picked up computing as a hobby,
           most of which are toys or uni projects. I intend to fill this out
           with some more serious projects that I intend on people using.])
- )
+ `(ul (@ (class "project-grid"))
+   ,(project "C++ Software Renderer"
+             (list
+              `(p "This was for the Computer Graphics module at university.")
+              `(p "It's a softwarer rasterizer and raytracer in C++ with working shadows, mirrors, and OBJ model loading. "))
+             "https://github.com/phoebehfharris/renderer")
+
+   ,(project "Medication Tracker Wearable"
+             (list
+              `(p "I did this back in 2024 for the Computer Science Society's annual 24-hour hackathon.")
+              `(p "This is an embedded wearable that connects over Wi-Fi to a GTK4+Python app to act as a buzzing medication tracker."))
+             #f)
+
+   ,(project "High-performance fluid simulator"
+             (list
+              `(p "For my High Performance Computing unit, the uni provided me with basic code for an LBM fluid simulator solver. ")
+              `(p "I made it ~300x faster using a mixture of vectorisation, OpenMP, MPI, and tears. "))
+             (list
+              `"https://github.com/phoebehfharris/hpc-fluid"
+              `"https://github.com/phoebehfharris/mpi-fluid"))
+
+   ,(project "littlecomp"
+             (list
+              `(p "This is a toy compiler that converts an infix notation mathematical expression into x86 assembly. ")
+              `(p "I wanted this to be an experiment with register allocation schemes, so it uses Sethi-Ullman register allocation!")
+              `(p "It was also my first experiment with Zig as a language. I find it OK."))
+             "https://github.com/phoebehfharris/littlecomp")
+
+   ,(project "discordnoodle"
+             (list
+              `(p "When I was a bored kid at school in 2022, I thought it would be fun to give my friends access to Discord in class through a bridge. ")
+              `(p "I used a Discord bot to hoover up all the messages into MongoDB, then provide an Angular web view into these messages authenticated behind an accounts system. ")
+              `(p "The user can even send messages (which are sent by the bot). ")
+              )
+             "https://github.com/phoebehfharris/discordnoodle")
+   ,(project "Ongoing Fedora packaging work"
+             (list
+              `(p (string-append "I'm currently in the process of packaging ",(anchor "clifton" "https://github.com/isambard-sc/clifton") " for Fedora. "))
+              `(p "I'm hoping to take what I've learned from this to take a stab at packaging Typst as well. ")
+              )
+             "https://github.com/phoebehfharris/clifton-fedora"
+             )
+   ))

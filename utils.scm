@@ -5,9 +5,11 @@
   #:export (anchor
             icon-content
             icon-link
+            project
             static-page))
 
 (define (anchor content uri)
+  (display uri)
   `(a (@ (href ,uri)) ,content))
 
 
@@ -26,4 +28,15 @@
     ,content))
 
 (define (icon-link content uri icon-name)
-  (icon-content (anchor content uri) icon-name))
+  (anchor (icon-content content icon-name) uri))
+
+(define (project name description link)
+  `(section
+    (@ (class "project"))
+    (div (@ (class "project-header"))
+         (h4 ,name)
+         ,(if (list? link)
+              `(div (@ (class "git-icons")) ,(map (lambda (s) (icon-link "" s "github.svg")) link))
+              (icon-link "" link "github.svg")))
+    ,@description
+    ))

@@ -112,3 +112,31 @@ ul.links {
     font-style: normal;
     font-display: swap;
 }
+
+section.project {
+    border: 2px solid var(--red);
+    border-radius: 5px;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+div.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project h4 {
+    margin: 0px;
+}
+
+div.git-icons {
+    display: flex;
+    column-gap: 10px;
+}
+
+ul.project-grid {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
