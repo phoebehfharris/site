@@ -6,6 +6,7 @@
  (p [I've made a bunch of projects since I picked up computing as a hobby,
           most of which are toys or uni projects. I intend to fill this out
           with some more serious projects that I intend on people using.])
+ (p [Note that this isn't really meant to be a CV, or display what I've learned or proven from each one. If you want that, I'd suggest looking at ,(anchor "my resume" "static/cv.pdf")])
  `(ul (@ (class "project-grid"))
    ,(project "C++ Software Renderer"
              (list
