@@ -1,3 +1,21 @@
+:root {
+    color-scheme: light dark;
+    --blue: light-dark(#1e66f5, #89b4fa);
+    --red: light-dark(#d20f39, #f38ba8);
+    --background: light-dark(#eff1f5, #1e1e2e);
+    --text: light-dark(#4c4f69, #cdd6f4);
+    --header: light-dark(#6c6f85, #a6adc8);
+}
+
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Ubuntu-Regular", sans-serif;
+    font-size: 1.15em;
+}
+
 .header a {
     text-align: center;
 }
@@ -12,7 +30,7 @@
 }
 
 a {
-    color: light-dark(#1e66f5, #89b4fa);
+    color: var(--blue);
     text-decoration: none;
 }
 
@@ -20,27 +38,13 @@ a:hover {
     text-decoration: underline;
 }
 
-:root {
-    color-scheme: light dark;
-}
-
-
-body {
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: light-dark(#eff1f5, #1e1e2e);
-    color: light-dark(#4c4f69, #cdd6f4);
-    font-family: "Ubuntu-Regular", sans-serif;
-    font-size: 1.15em;
-}
-
 h1, h2 {
-    color: light-dark(#d20f39, #f38ba8);
+    color: var(--red);
     text-align: center;
 }
 
 h3, h4, h5, h6 {
-    color: light-dark(#6c6f85, #a6adc8);
+    color: var(--header);
 }
 
 @media screen and (max-width: 600px) {
@@ -80,8 +84,10 @@ h3, h4, h5, h6 {
     vertical-align: -0.125em;
 }
 
-.icon-content img {
-    filter: invert(light-dark(0, 1));
+@media (prefers-color-scheme: dark) {
+    .icon-content img {
+        filter: invert(1);
+    }
 }
 
 ul.links {
@@ -92,14 +98,14 @@ ul.links {
     display: inline;
     margin-right: 2em;
     padding: 5px;
-    border: 2px solid light-dark(#d20f39, #f38ba8);
+    border: 2px solid var(--red);
     border-radius: 5px;
 }
 
 @font-face {
-  font-family: 'Ubuntu-Regular';
-  src: url('/static/Ubuntu-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Ubuntu-Regular';
+    src: url('/static/Ubuntu-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
