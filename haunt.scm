@@ -20,6 +20,12 @@
              (head
               (meta (@ (charset "utf-8")))
               (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
+	      (meta (@ (name "description") (content "A personal website for Phoebe Harris")))
+	      (meta (@ (name "theme-color") (content "#eff1f5") (media "prefers-color-scheme: light")))
+	      (meta (@ (name "theme-color") (content "#1e1e2e") (media "prefers-color-scheme: dark")))
+	      (meta (@ (name "color-scheme") (content "dark light")))
+	      (link (@ (rel "canonical")
+		       (href "phoebeharris.xyz")))
               (link (@ (rel "preload")
                        (type "font/woff2")
                        (as "font")
@@ -51,17 +57,16 @@
          #:collection-template
          index
          ))
-
 (site #:title "Phoebe Harris"
       #:domain domain
       #:default-metadata
       '((author . "Phoebe Harris")
-        (email  . "root@phoebeharris.xyz"))
+	(email  . "root@phoebeharris.xyz"))
       #:readers (list commonmark-reader skribe-reader)
       #:builders (list (blog #:theme haunt-theme)
-                       (flat-pages "pages" #:template (theme-layout haunt-theme))
-                       ;; (static-page "index" haunt-theme "index.html" index)
-                       (static-directory "css")
-                       (static-directory "static")
-                       (atom-feed)
-                       (atom-feeds-by-tag)))
+		       (flat-pages "pages" #:template (theme-layout haunt-theme))
+		       ;; (static-page "index" haunt-theme "index.html" index)
+		       (static-directory "css")
+		       (static-directory "static")
+		       (atom-feed)
+		       (atom-feeds-by-tag)))
