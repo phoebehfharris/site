@@ -6,12 +6,17 @@
             icon-content
             icon-link
             project
-            static-page))
+            static-page
+	    tooltip))
 
 (define (anchor content uri)
   (display uri)
   `(a (@ (href ,uri)) ,content))
 
+(define (tooltip content tip)
+  `(span (@ (class "tooltip"))
+	 ,content
+	 (span (@ (class "tooltiptext")) ,tip)))
 
 
 (define (static-page title theme file-name body)

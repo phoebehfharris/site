@@ -140,3 +140,31 @@ ul.project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
+
+span.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted var(--text);
+	cursor: pointer;
+}
+
+span.tooltiptext {
+	visibility: hidden;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	text-align: center;
+	z-index: 1;
+	margin-bottom: 5px;
+	background-color: var(--text);
+	color: var(--background);
+	padding: 5px;
+	border-radius: 6px;
+	bottom: 100%;
+}
+
+span.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
