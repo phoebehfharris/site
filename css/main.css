@@ -20,6 +20,11 @@ body {
     text-align: center;
 }
 
+.header {
+    container-type: inline-size;
+    container-name: header;
+}
+
 .header ul {
     display: flex;
     padding: 0px;
@@ -47,8 +52,7 @@ h3, h4, h5, h6 {
     color: var(--header);
 }
 
-@media screen and (max-width: 600px) {
-
+@container header (max-width: 400px) {
     .header ul {
         justify-content: space-between;
     }
@@ -58,8 +62,7 @@ h3, h4, h5, h6 {
     }
 }
 
-@media screen and (min-width: 600px) {
-
+@container header (min-width: 400px) {
     .header ul {
         justify-content: left;
     }
@@ -67,7 +70,6 @@ h3, h4, h5, h6 {
     .header li {
         margin-right: 2vw;
     }
-
 }
 
 .icon-content {
