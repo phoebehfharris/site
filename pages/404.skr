@@ -1,0 +1,6 @@
+(post
+:title "404"
+
+(h1 [404])
+
+(p [It looks like you're trying to access a page that doesn't exist. Go ,(anchor "home" "/")?]))
