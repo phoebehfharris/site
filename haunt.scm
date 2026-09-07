@@ -1,4 +1,5 @@
 (use-modules (haunt asset)
+             (haunt post)
              (haunt site)
              (haunt builder assets)
              (haunt builder atom)
@@ -7,6 +8,7 @@
              (haunt reader)
              (haunt reader commonmark)
              (haunt reader skribe)
+             (srfi srfi-19)
              (index)
              (utils))
 
@@ -57,6 +59,12 @@
                    )
              )
            )
+         #:post-template
+         (lambda (post)
+           `((article
+              (h1 (@ (class "title")) ,(post-ref post 'title))
+              (div (@ (class "date")) ,(date->string (post-date post) "~d ~B, ~Y"))
+              (div (@ (class "content")) ,(post-sxml post)))))
          #:collection-template
          index
          ))

@@ -174,3 +174,8 @@ span.tooltip:hover .tooltiptext {
 	visibility: visible;
 }
 
+.date {
+    text-align: center;
+    font-size: 1.17em;
+    font-weight: bold;
+}
