@@ -47,9 +47,9 @@
                    (body
                     (header (@ (class "header"))
                             (nav (ul
-                                  (li (h3 ( ,(anchor "home" "/"))))
-                                  (li (h3 ( ,(anchor "now" "/now.html"))))
-                                  (li (h3 ( ,(anchor "projects" "/projects.html"))))
+                                  (li ,(anchor "home" "/"))
+                                  (li ,(anchor "now" "/now.html"))
+                                  (li ,(anchor "projects" "/projects.html"))
                                   ))
                             )
                     ,body

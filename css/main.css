@@ -18,6 +18,8 @@ body {
 
 .header a {
     text-align: center;
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
 .header {
@@ -28,6 +30,8 @@ body {
 .header ul {
     display: flex;
     padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .header li {
