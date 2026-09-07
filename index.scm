@@ -15,8 +15,10 @@
 (define cv-url "static/cv.pdf")
 (define (index site title posts prefix)
   `((p "I'm Phoebe, a UK-based Computer Science student and embedded programmer.
-        Right now, I'm working on Zephyr RTOS at Nordic Semiconductor doing hardware bringup work with our upcoming wireless products.
-        I enjoy a lot of different technical interests but I'm primarily into systems programming.
+        I'm currently entering my fourth year studying Computer Science at the University of Bristol,
+        in which I will be studying cryptology, advanced computer architecture, low-level security,
+        programming language theory, and possibily local-first computing.")
+    (p "I enjoy a lot of different technical interests but I'm primarily into systems programming.
         In particular, I have experience in Rust, C programming, OS development, high-performance computing, embedded software.
         I'm on Committee as Technical Events Officer for my University's Computer Science Society, which is my second consecutive year to do so. ")
     (p "I'm very passionate about open-source software, and i'm basically angling for a job in either the Linux world,
