@@ -46,10 +46,10 @@
                              (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/"))))
                    (body
                     (header (@ (class "header"))
-                            (nav (ul
-                                  (li ,(anchor "home" "/"))
-                                  (li ,(anchor "now" "/now.html"))
-                                  (li ,(anchor "projects" "/projects.html")))))
+                            (nav
+                             (li ,(anchor "home" "/"))
+                             (li ,(anchor "now" "/now.html"))
+                             (li ,(anchor "projects" "/projects.html"))))
                     ,body))))
          #:post-template
          (lambda (post)

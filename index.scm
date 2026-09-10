@@ -25,7 +25,7 @@
         or in solutions that bring software that respects people into normal people's hands.
         if this sounds like you, " ,(anchor "hire me" cv-url) ".")
     (p "Outside of software, I'm interested in the humanities, urbanism, martial arts, and fashion. ")
-    (ul
+    (nav
      (@ (class "links"))
      (li ,(icon-link "phoebehfharris" "https://github.com/phoebehfharris" "github.svg"))
      (li ,(icon-link "phoebeharris:fedora.im" "matrix:u/phoebeharris:fedora.im" "matrix.svg"))

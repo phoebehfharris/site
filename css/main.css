@@ -29,7 +29,7 @@ body {
     container-name: header;
 }
 
-.header ul {
+.header nav {
     display: flex;
     padding: 0px;
     margin-top: 10px;
@@ -59,7 +59,7 @@ h3, h4, h5, h6 {
 }
 
 @container header (max-width: 400px) {
-    .header ul {
+    .header nav {
         justify-content: space-between;
     }
 
@@ -69,7 +69,7 @@ h3, h4, h5, h6 {
 }
 
 @container header (min-width: 400px) {
-    .header ul {
+    .header nav {
         justify-content: left;
     }
 
@@ -98,7 +98,7 @@ h3, h4, h5, h6 {
     }
 }
 
-ul.links {
+nav.links {
     padding: 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
