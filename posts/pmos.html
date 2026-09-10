@@ -1,0 +1,170 @@
+title: A Review of postmarketOS on the Fairphone Gen 6+
+date: 2026-09-08 18:53
+tags: meow
+---
+<div>
+    <aside class="warning" aria-label="Photosensitivity Warning">
+        <p>This article contains looping videos that play automatically. Because the web is a fake standard, I can't make them
+            not play automatically based on the user's reduced motion setting with JavaScript. </p>
+    </aside>
+    <p>Over the past 2 weeks, I've been daily-driving postmarketOS with phosh on a Fairphone Gen 6+ (From now on
+        called FP6). I had previously been using a Fairphone 4 (FP4) with lineageOS, but I've had a good bit of
+        experience with degoogled Android before that, including CalyxOS on the FP4 and /e/OS on a Samsung Galaxy S8.
+        I'd like to document the parts I like about it, and expectedly, the parts that really aren't ready for use yet.
+    </p>
+    <p>I hadn't been planning on getting a newer Fairphone for a while (at least wait til Gen 7), but I left my FP4 in a
+        Tesco and it got nicked. Oh well ;P
+    </p>
+    <h2>What Went Well</h2>
+    <h3>Networking and Personal Information Management</h3>
+    <p>GNOME's always had very strong online account features, and has the combination of not assuming that the user
+        uses a particular ecosystem (see: /e/OS basically assumes that you have a Nextcloud). GNOME doesn't care if you
+        use Nextcloud, Microsoft, or just something that exposes a webDAV and IMAP - it'll all appear in system apps all
+        the same.
+    </p>
+    <p>Part of this seems to me to come from some of the specific benefits of a coordinated vision that Linux can
+        benefit from in a way that's been mostly inaccessible to degoogled Android ROMs. While obviously Linux
+        distributions are made of a lot of components by a lot of different projects, the UI layer is usually
+        centralised under one project and one vision (GNOME, KDE, elementaryOS, etc). On the other hand, a degoogled
+        Android ROM's UI features are going to be a mixture of AOSP, F-Droid, microG, Aurora store, bespoke apps, and so
+        on.
+    </p>
+    <p>Compare, for instance, PIM in a degoogled ROM to that in Phosh. In Phosh, you sign in in GNOME Online Accounts,
+        and you have access to mail (if using a GNOME mail client), contacts, calendars, the works. In LineageOS, I have
+        to think about DAVx5, ICSx5, the Nextcloud app, and whatever calendar and contacts app my ROM is using. The
+        difference in experience is night and day. /e/OS tries to paper over this but doesn't - I still find the same OS
+        flows taking me to DAVx5/ICSx5 under the hood. In general, I find a lot of the time when Android ROMs try to
+        integrate OS-level features they really just look like having an entry in settings redirect to an app - I see
+        you, Seedvault hiding in LineageOS settings. In Linux, the whole stack belongs to us, and is centralised in
+        single projects with a coherent vision and broad user-interface guidelines that allow third-party apps to feel
+        like they fit in.</p>
+    <p>Obviously this is a little limited by GNOME not really having a good mail app at the moment, but it looks like
+        Stamp is getting really good. Plus, some of the ongoing work into further networking/PIM features in GNOME are
+        really exciting - the upcoming local-first contacts portal and <a
+                                                                           href="https://modal.cx/blog/announcing-flatpak-sta/">password autofill portal</a> come to mind.
+    </p>
+    <h3>Mapping</h3>
+    <p>Android has long had a bit of a maps problem. In general, the choice facing users has been to use some of the big
+        nonfree mapping apps, like Google Maps or Magic Earth, or to forego important features like public transport
+        routing. The open-source Android world is starting to catch up, with efforts such as <a
+            href="https://gitlab.e.foundation/e/os/maps">an /e/OS maps app with transitous routing in alpha</a> and <a
+            href="https://2026.stateofthemap.org/sessions/DDJRVU/">work on integrating public transit into CoMaps</a>
+        ongoing, but GNOME Maps has public transport routing, not in alpha, right now, and has done for a while.
+    </p>
+    <h2>The Hard Parts</h2>
+    <h3>Hardware support</h3>
+    <p>Fairphones tend to be among the better-supported of pmOS devices, but the Fairphone 6 is a new phone (roughly a
+        year old), and the hardware support really isn't there yet. Speakers don't work, microphone doesn't work,
+        neither does fingerprint, NFC, or the camera. I had been betting on mobile data, SMS and bluetooth working
+        (they're documented as working on the pmOS wiki), but I've had no luck. The system UI recognises that I have a
+        SIM card, but I never connect properly, and BlueTooth has similar issues. With BlueTooth headphones out, that
+        leaves me with basically no routes to play audio, and without being able to authenticate text messages, I can't
+        use Signal, even with Linux-first clients like <a
+            href="https://flathub.org/en/apps/de.schmidhuberj.Flare">Flare</a>. Basically, I have a computer that can
+        connect to WiFi and has no audio.
+    </p>
+    <p>Dual-booting doesn't work particularly well either. You can install pmOS on an SD card and dual-boot it with
+        /e/OS, but there's no ability to choose a boot partition at boot - you have to flash a new boot partition
+        remotely each time.
+    </p>
+    <h3>Waydroid</h3>
+    <p>Waydroid is a compatability layer that allows running Android apps on Linux systems. Theoretically, it should
+        allow me to run the Android apps I need to run on my phone which don't have Linux clients - in particular, my
+        Railcard, WhatsApp, my bank, etc.
+    </p>
+    <p>I've had no luck in getting it working - upon opening the app or invoking it from a CLI, it just causes the UI to
+        flicker. I know other users have managed to get it working on FP6 hardware, but even then they've had Internet
+        access issues.
+    </p>
+    <figure class="video-container">
+        <video autoplay="true" loop="true" controls="false" width="279">
+            <source src="static/waydroidflicker.webm" widthtype="video/webm"/>
+        </video>
+        <figcaption>The screen flickering after opening Waydroid</figcaption>
+    </figure>
+    <h3>UI polish</h3>
+    <p>GNOME is a great desktop system, but Phosh and GNOME apps in many places don't feel polished. GNOME Apps benefit
+        a lot from buttons having a lot of reactivity. A button takes a different appearance when the mouse is hovered
+        over it, and a different appearance again when pressed
+    </p>
+    <figure class="video-container">
+        <video autoplay="true" loop="true" controls="false" width="568">
+            <source src="static/backbutton-desktop.webm" widthtype="video/webm"/>
+        </video>
+        <figcaption>Pressing the back button in a GNOME desktop</figcaption>
+    </figure>
+    <p>On pmOS (Phosh + GNOME apps), this reactivity doesn't feel appreciable, meaning you don't get feedback on
+        buttonpresses in a way that feels a bit choppy. I'm not sure pressing an app in the app list has any kind of tap
+        feedback besides opening the app, for instance. Looking more closely, standard GTK UI buttons have feedback, but
+        the visible press is less long on, for instance, back buttons, compared to Android.
+    </p>
+    <ul class="video-sidebyside">
+        <li>
+            <figure class="video-container">
+                <video autoplay="true" loop="true" controls="false" width="279">
+                    <source src="static/backbutton.webm" widthtype="video/webm" />
+                </video>
+                <figcaption>Pressing the back button in phosh</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure class="video-container">
+                <video autoplay="true" loop="true" controls="false" width="279">
+                    <source src="static/appopen.webm" widthtype="video/webm" />
+                </video>
+                <figcaption>Opening an app in phosh</figcaption>
+            </figure>
+        </li>
+    </ul>
+
+    <p>Many other gestures and interactions feel unpolished in a way that I don't have the UI skills to reliably
+        identify.</p>
+    <p>Copy-paste is also a bit of a mess. Different apps and system dialogues seem to have different avenues for
+        copy-pasting. Some don't seem to be copy-pastable at all, and those differences are just across GNOME apps! In
+        particular, I've found no way to paste a password into GNOME Online Accounts. Even just a paste button in the
+        on-screen keyboard would provide a big improvement, but of course I'd really like to see a standard system text
+        popup menu. I don't have the technical knowledge on Wayland and the XDG Desktop Portals to know what that looks
+        like architecturally, but the current system isn't very good IMO.</p>
+    <h3>Misc</h3>
+    <p>Chatty isn't a very complete piece of software as it stands. Notably, it includes Matrix messaging features, but
+        doesn't seem to be able to handle encrypted messaging at all. To an extent, non-Element Matrix clients lagging
+        behind is pretty expected, but this feels like a pretty basic feature to not have working, especially for
+        something installed out of the box.</p>
+    <p>The UI allows setting a pin, and actively encourages it with a numpad password box. However, setting the password
+        to something with letters still has the login screen bring up a numpad by default, creating a number PIN with a
+        fairly normal amount of digits for a phone PIN will be rejected by the OS, and upon switching from the numpad to
+        the keyboard in the login screen, you can't go back without reentering the login screen.</p>
+    <p>Phosh gives you a popup asking about USB developer mode on the plugging in of any USB cable, even a dumb power
+        cable.</p>
+    <h2>Conclusion</h2>
+    <p>With the mobile data, driver, and Waydroid issues unfortunately I don't think I can stick with postmarketOS for
+        now. But I'm hopeful for the future! There's been a lot of movement on mainline drivers for FP6 recently
+        (although from what I gather a lot of the work is vibecoded), and I think the big strides taken in the past ten
+        years by the Linux desktop have proven that free software communities can create high-quality consumer software.
+    </p>
+    <p>Generally, as time's gone on the feasibility of free Android ROMs has been more and more difficult. Google's
+        regularly slashed the update cadence of their publicly available security patches, and whereas once upon a time
+        AOSP would have several high-quality apps in them, now new app development is mostly kept as nonfree Google
+        additions. It remains to be seen whether the new sideloading lockdowns will strike a big blow to the degoogled
+        Android ecosystem (remember - even if our degoogled ROMs don't lock down on sideloading, the loss of
+        accessibility could damage the health of projects like F-Droid and NewPipe). In any case, I hope you don't think
+        me too hasty in seeing this as a bit of a sinking ship. Mobile Linux matters.</p>
+    <p>The success of free software initiatives have often depended on our ability to rise to crises. When Windows users
+        railed against AI slop changes and the deprecation of Windows 10, we were able to step in with a high-quality
+        operating system to offer. Now that European governments are realising the insanity of having most of their
+        critical infrastructure rely on American companies, once again, Linux is ready to step in.</p>
+    <p>Sometimes we fail - when Discord users railed against overbearing age attestation requirements, Matrix was not
+        well placed to step in - it currently lacks basic features like screen sharing with audio in calls, or server
+        roles. Hence, nothing changed.</p>
+    <p>What about when the next crisis in the mobile ecosystem happens? When Android pushes a user-hostile update that
+        the degoogled ROMs are unable to counter, will mobile Linux be able to step up?</p>
+    <p>I hope the answer is yes, and I'm gonna throw some money towards postmarketOS. In a year, I'll write a second
+        blog post assessing whether the following areas have improved:</p>
+    <ul>
+        <li>Driver support (speakers, microphone, mobile data, BlueTooth, fingerprint, NFC, camera)</li>
+        <li>Ease of dual booting pmOS and Android.</li>
+        <li>Waydroid support</li>
+        <li>UI look and feel</li>
+        <li>Chatty polish</li>
+    </ul>
+    </div>

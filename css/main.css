@@ -2,6 +2,8 @@
     color-scheme: light dark;
     --blue: light-dark(#1e66f5, #89b4fa);
     --red: light-dark(#d20f39, #f38ba8);
+    --yellow-border: light-dark(#df8e1d, #eed49f);
+    --yellow-background: light-dark(#e5c890, #f9e2af);
     --background: light-dark(#eff1f5, #1e1e2e);
     --text: light-dark(#4c4f69, #cdd6f4);
     --header: light-dark(#6c6f85, #a6adc8);
@@ -178,4 +180,34 @@ span.tooltip:hover .tooltiptext {
     text-align: center;
     font-size: 1.17em;
     font-weight: bold;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.video-container figcaption {
+    margin-top: 20px;
+}
+
+ul.video-sidebyside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.video-sidebyside li {
+    display: inline;
+}
+
+
+.warning {
+    border: 2px solid var(--yellow-border);
+    border-radius: 10px;
+    color: var(--text);
+    padding: 10px;
+    margin-top: 20px;
 }

@@ -39,26 +39,18 @@
 		                     (title "Phoebe Harris")
 		                     (href "/atom.xml")))
                     (link (@ (rel "stylesheet")
-                             (href "/css/main.css")
-                             ))
+                             (href "/css/main.css")))
                     (link (@ (rel "me")
                              (href "https://github.com/phoebehfharris")))
                     (link (@ (rel "me")
-                             (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/")))
-                    )
+                             (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/"))))
                    (body
                     (header (@ (class "header"))
                             (nav (ul
                                   (li ,(anchor "home" "/"))
                                   (li ,(anchor "now" "/now.html"))
-                                  (li ,(anchor "projects" "/projects.html"))
-                                  ))
-                            )
-                    ,body
-                    )
-                   )
-             )
-           )
+                                  (li ,(anchor "projects" "/projects.html")))))
+                    ,body))))
          #:post-template
          (lambda (post)
            `((article
@@ -66,14 +58,13 @@
               (div (@ (class "date")) ,(date->string (post-date post) "~d ~B, ~Y"))
               (div (@ (class "content")) ,(post-sxml post)))))
          #:collection-template
-         index
-         ))
+         index))
 (site #:title "Phoebe Harris"
       #:domain domain
       #:default-metadata
       '((author . "Phoebe Harris")
         (email  . "root@phoebeharris.xyz"))
-      #:readers (list commonmark-reader skribe-reader)
+      #:readers (list commonmark-reader html-reader skribe-reader)
       #:builders (list (blog #:theme haunt-theme)
                        (flat-pages "pages" #:template (theme-layout haunt-theme))
                        ;; (static-page "index" haunt-theme "index.html" index)
