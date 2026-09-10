@@ -7,7 +7,7 @@
             icon-link
             project
             static-page
-	    tooltip))
+	        tooltip))
 
 (define (anchor content uri)
   (display uri)
@@ -15,8 +15,8 @@
 
 (define (tooltip content tip)
   `(span (@ (class "tooltip"))
-	 ,content
-	 (span (@ (class "tooltiptext")) ,tip)))
+	,content
+	(span (@ (class "tooltiptext")) ,tip)))
 
 
 (define (static-page title theme file-name body)
@@ -25,15 +25,15 @@
                          ((theme-layout theme) site title body)
                          sxml->html)))
 
-(define (icon-content content icon-name)
+(define (icon-content content icon-name alt)
   `(span
     (@ (class "icon-content"))
     (img (@
           (src ,(string-append "static/icons/" icon-name))))
     ,content))
 
-(define (icon-link content uri icon-name)
-  (anchor (icon-content content icon-name) uri))
+(define (icon-link content uri icon-name alt)
+  (anchor (icon-content content icon-name alt) uri))
 
 (define (project name description link)
   `(section
@@ -41,7 +41,7 @@
     (div (@ (class "project-header"))
          (h4 ,name)
          ,(if (list? link)
-              `(div (@ (class "git-icons")) ,(map (lambda (s) (icon-link "" s "github.svg")) link))
-              (icon-link "" link "github.svg")))
+              `(div (@ (class "git-icons")) ,(map (lambda (s) (icon-link "" s "github.svg" "GitHub repo")) link))
+              (icon-link "" link "github.svg" "GitHub repo")))
     ,@description
     ))
