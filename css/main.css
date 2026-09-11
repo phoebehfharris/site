@@ -203,11 +203,20 @@ ul.video-sidebyside {
     display: inline;
 }
 
-
 .warning {
     border: 2px solid var(--yellow-border);
     border-radius: 10px;
     color: var(--text);
     padding: 10px;
     margin-top: 20px;
+}
+
+.skip-content {
+    left: 50%;
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+.skip-content:focus {
+    transform: translateY(0%);
 }

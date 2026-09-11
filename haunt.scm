@@ -45,12 +45,13 @@
                     (link (@ (rel "me")
                              (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/"))))
                    (body
+                    (a (@ (href "#main") (class "skip-content")) "Skip to main content")
                     (header (@ (class "header"))
-                            (nav
-                             (li ,(anchor "home" "/"))
-                             (li ,(anchor "now" "/now.html"))
-                             (li ,(anchor "projects" "/projects.html"))))
-                    ,body))))
+                            (nav (@ (aria-label "Header"))
+                                 (li ,(anchor "home" "/"))
+                                 (li ,(anchor "now" "/now.html"))
+                                 (li ,(anchor "projects" "/projects.html"))))
+                    (main (@ (id "main") (tabindex "-1")) ,body)))))
          #:post-template
          (lambda (post)
            `((article

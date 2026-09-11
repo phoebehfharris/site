@@ -43,5 +43,4 @@
          ,(if (list? link)
               `(div (@ (class "git-icons")) ,(map (lambda (s) (icon-link "" s "github.svg" "GitHub repo")) link))
               (icon-link "" link "github.svg" "GitHub repo")))
-    ,@description
-    ))
+    ,@description))

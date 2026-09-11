@@ -26,11 +26,11 @@
         if this sounds like you, " ,(anchor "hire me" cv-url) ".")
     (p "Outside of software, I'm interested in the humanities, urbanism, martial arts, and fashion. ")
     (nav
-     (@ (class "links"))
-     (li ,(icon-link "phoebehfharris" "https://github.com/phoebehfharris" "github.svg" "GitHub Profile"))
-     (li ,(icon-link "phoebeharris:fedora.im" "matrix:u/phoebeharris:fedora.im" "matrix.svg" "Matrix"))
-     (li ,(icon-link "root@phoebeharris.xyz" "mailto:root@phoebeharris.xyz" "email.svg" "Email"))
-     (li ,(icon-link "phoebe-hf-harris" "https://www.linkedin.com/in/phoebe-hf-harris/" "linkedin.svg" "LinkedIn Profile"))
-     (li ,(icon-link "GPG key" "static/gpg.txt" "key.svg" "PGP Key")))
-    
+     (@ (class "links") (aria-label "Links"))
+     (ul (li ,(icon-link "phoebehfharris" "https://github.com/phoebehfharris" "github.svg" "GitHub Profile"))
+         (li ,(icon-link "phoebeharris:fedora.im" "matrix:u/phoebeharris:fedora.im" "matrix.svg" "Matrix"))
+         (li ,(icon-link "root@phoebeharris.xyz" "mailto:root@phoebeharris.xyz" "email.svg" "Email"))
+         (li ,(icon-link "phoebe-hf-harris" "https://www.linkedin.com/in/phoebe-hf-harris/" "linkedin.svg" "LinkedIn Profile"))
+         (li ,(icon-link "GPG key" "static/gpg.txt" "key.svg" "PGP Key"))))
+
     ,(ugly-default-collection-template site title posts prefix)))
