@@ -18,32 +18,46 @@
   (theme #:name "Theme"
          #:layout
          (lambda (site title body)
+           (define site-title (string-append "Phoebe Harris's site - " title))
            `((doctype "html")
              (html (@ (lang "en-GB"))
                    (head
-                    (meta (@ (charset "utf-8")))
+                    (meta (@ (charset "UTF-8")))
                     (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
-	                (meta (@ (name "description") (content "A personal website for Phoebe Harris")))
-	                (meta (@ (name "theme-color") (content "#eff1f5") (media "prefers-color-scheme: light")))
-	                (meta (@ (name "theme-color") (content "#1e1e2e") (media "prefers-color-scheme: dark")))
-	                (meta (@ (name "color-scheme") (content "dark light")))
-                    (meta (@ (property "og:title") (content ,title)))
-	                (link (@ (rel "canonical")
-		                     (href "phoebeharris.xyz")))
+                    (meta (@ (name "text-scale") (content "scale")))
+                    (title ,site-title)
+
+                    (link (@ (rel "stylesheet")
+                             (href "/css/main.css")))
                     (link (@ (rel "preload")
                              (type "font/woff2")
                              (as "font")
                              (href "/static/Ubuntu-Regular.woff2")))
+
+                    (meta (@ (property "og:title") (content ,site-title)))
+	                (meta (@ (name "description") (content "A personal website for Phoebe Harris")))
+	                (meta (@ (property "og:description") (content "A personal website for Phoebe Harris")))
+
+                    (link (@ (rel "icon")
+                             (type "image/x-icon")
+                             (href "/favicon.ico")))
+
+                    (meta (@ (property "og:site_name") (content "Phoebe Harris's site")))
+
+                    (meta (@ (name "author") (content "Phoebe Harris")))
+
+	                (meta (@ (name "color-scheme") (content "dark light")))
+	                (meta (@ (name "theme-color") (content "#eff1f5") (media "prefers-color-scheme: light")))
+	                (meta (@ (name "theme-color") (content "#1e1e2e") (media "prefers-color-scheme: dark")))
+
                     (link (@ (rel "alternate")
 		                     (type "application/atom+xml")
 		                     (title "Phoebe Harris")
 		                     (href "/atom.xml")))
-                    (link (@ (rel "stylesheet")
-                             (href "/css/main.css")))
                     (link (@ (rel "me")
                              (href "https://github.com/phoebehfharris")))
                     (link (@ (rel "me")
-                             (href "https://www.linkedin.com/in/phoebe-harris-03754b2b4/"))))
+                             (href "https://www.linkedin.com/in/phoebe-hf-harris"))))
                    (body
                     (a (@ (href "#main") (class "skip-content")) "Skip to main content")
                     (header (@ (class "header"))
