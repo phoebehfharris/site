@@ -18,7 +18,12 @@
   (theme #:name "Theme"
          #:layout
          (lambda (site title body)
-           (define site-title (string-append "Phoebe Harris's site - " title))
+	       (define clean-title
+             (cond
+              ((string? title) title)
+              ((pair? title) (or (assoc-ref title 'title) ""))
+              (else "")))
+           (define site-title (string-append "Phoebe Harris's site - " clean-title))
            `((doctype "html")
              (html (@ (lang "en-GB"))
                    (head
