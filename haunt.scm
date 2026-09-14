@@ -78,7 +78,7 @@
       #:domain domain
       #:default-metadata
       '((author . "Phoebe Harris")
-        (email  . "root@phoebeharris.xyz"))
+        (email  . "hello@phoebeharris.xyz"))
       #:readers (list commonmark-reader html-reader skribe-reader)
       #:builders (list (blog #:theme haunt-theme)
                        (flat-pages "pages" #:template (theme-layout haunt-theme))
