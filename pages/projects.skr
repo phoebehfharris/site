@@ -18,7 +18,7 @@
              (list
               `(p "I did this back in 2024 for the Computer Science Society's annual 24-hour hackathon.")
               `(p "This is an embedded wearable that connects over Wi-Fi to a GTK4+Python app to act as a buzzing medication tracker."))
-             #f)
+             "https://github.com/phoebehfharris/fibre-optic-cable-tracker")
 
    ,(project "High-performance fluid simulator"
              (list
