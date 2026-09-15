@@ -9,9 +9,13 @@
             static-page
 	        tooltip))
 
-(define (anchor content uri)
+(define* (anchor content uri #:optional screenreader-text)
   (display uri)
-  `(a (@ (href ,uri)) ,content))
+  `(a ( @ (href ,uri)
+          ,@(if screenreader-text
+                `((aria-label ,screenreader-text))
+                '()))
+    ,content))
 
 (define (tooltip content tip)
   `(span (@ (class "tooltip"))
@@ -25,15 +29,15 @@
                          ((theme-layout theme) site title body)
                          sxml->html)))
 
-(define (icon-content content icon-name alt)
+(define (icon-content content icon-name)
   `(span
     (@ (class "icon-content"))
     (img (@
           (src ,(string-append "static/icons/" icon-name))))
     ,content))
 
-(define (icon-link content uri icon-name alt)
-  (anchor (icon-content content icon-name alt) uri))
+(define (icon-link content uri icon-name sr-label)
+  (anchor (icon-content content icon-name) uri sr-label))
 
 (define (project name description link)
   `(section
