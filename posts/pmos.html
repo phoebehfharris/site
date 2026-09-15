@@ -77,8 +77,9 @@ tags: meow
         access issues.
     </p>
     <figure class="video-container">
-        <video autoplay="true" loop="true" controls="false" width="279">
-            <source src="static/waydroidflicker.webm" widthtype="video/webm"/>
+        <video autoplay="true" loop="true" muted="true" playsinline="true" width="279"
+               aria-label="The user navigates through the app menu and clicks the Waydroid app. The app does not visibly open, and returns to the terminal my video recorder was launched from. The screen begins to occasionally black out and have the keyboard disappear.">
+            <source src="static/waydroidflicker.webm" type="video/webm"/>
         </video>
         <figcaption>The screen flickering after opening Waydroid</figcaption>
     </figure>
@@ -88,8 +89,9 @@ tags: meow
         over it, and a different appearance again when pressed
     </p>
     <figure class="video-container">
-        <video autoplay="true" loop="true" controls="false" width="568">
-            <source src="static/backbutton-desktop.webm" widthtype="video/webm"/>
+        <video autoplay="true" loop="true" muted="true" playsinline="true" width="558"
+               aria-label="The user opens the displays panel in GNOME settings, then presses the back button. The back button is clearly highlighted, then the UI moves back">
+            <source src="static/backbutton-desktop.webm" type="video/webm"/>
         </video>
         <figcaption>Pressing the back button in a GNOME desktop</figcaption>
     </figure>
@@ -97,74 +99,76 @@ tags: meow
         buttonpresses in a way that feels a bit choppy. I'm not sure pressing an app in the app list has any kind of tap
         feedback besides opening the app, for instance. Looking more closely, standard GTK UI buttons have feedback, but
         the visible press is less long on, for instance, back buttons, compared to Android.
-    </p>
-    <ul class="video-sidebyside">
-        <li>
-            <figure class="video-container">
-                <video autoplay="true" loop="true" controls="false" width="279">
-                    <source src="static/backbutton.webm" widthtype="video/webm" />
-                </video>
-                <figcaption>Pressing the back button in phosh</figcaption>
-            </figure>
-        </li>
-        <li>
-            <figure class="video-container">
-                <video autoplay="true" loop="true" controls="false" width="279">
-                    <source src="static/appopen.webm" widthtype="video/webm" />
-                </video>
-                <figcaption>Opening an app in phosh</figcaption>
-            </figure>
-        </li>
-    </ul>
+        </p>
+        <ul class="video-sidebyside">
+            <li>
+                <figure class="video-container">
+                    <video autoplay="true" loop="true" muted="true" playsinline="true" width="279"
+                           aria-label="The user navigates to GNOME Settings, which has the Search panel open. The user presses the back button, which does not appear to appreciably highlight. The settings panel returns to the main view.">
+                        <source src="static/backbutton.webm" type="video/webm" />
+                    </video>
+                    <figcaption>Pressing the back button in phosh</figcaption>
+                </figure>
+                </li>
+                <li>
+                    <figure class="video-container">
+                        <video autoplay="true" loop="true" muted="true" playsinline="true" width="279"
+                               aria-label="The user navigates to the app grid, then presses Settings. The settings app icon doesn't appear to react, then settings opens.">
+                            <source src="static/appopen.webm" type="video/webm" />
+                        </video>
+                        <figcaption>Opening an app in phosh</figcaption>
+                    </figure>
+                </li>
+                </ul>
 
-    <p>Many other gestures and interactions feel unpolished in a way that I don't have the UI skills to reliably
-        identify.</p>
-    <p>Copy-paste is also a bit of a mess. Different apps and system dialogues seem to have different avenues for
-        copy-pasting. Some don't seem to be copy-pastable at all, and those differences are just across GNOME apps! In
-        particular, I've found no way to paste a password into GNOME Online Accounts. Even just a paste button in the
-        on-screen keyboard would provide a big improvement, but of course I'd really like to see a standard system text
-        popup menu. I don't have the technical knowledge on Wayland and the XDG Desktop Portals to know what that looks
-        like architecturally, but the current system isn't very good IMO.</p>
-    <h3>Misc</h3>
-    <p>Chatty isn't a very complete piece of software as it stands. Notably, it includes Matrix messaging features, but
-        doesn't seem to be able to handle encrypted messaging at all. To an extent, non-Element Matrix clients lagging
-        behind is pretty expected, but this feels like a pretty basic feature to not have working, especially for
-        something installed out of the box.</p>
-    <p>The UI allows setting a pin, and actively encourages it with a numpad password box. However, setting the password
-        to something with letters still has the login screen bring up a numpad by default, creating a number PIN with a
-        fairly normal amount of digits for a phone PIN will be rejected by the OS, and upon switching from the numpad to
-        the keyboard in the login screen, you can't go back without reentering the login screen.</p>
-    <p>Phosh gives you a popup asking about USB developer mode on the plugging in of any USB cable, even a dumb power
-        cable.</p>
-    <h2>Conclusion</h2>
-    <p>With the mobile data, driver, and Waydroid issues unfortunately I don't think I can stick with postmarketOS for
-        now. But I'm hopeful for the future! There's been a lot of movement on mainline drivers for FP6 recently
-        (although from what I gather a lot of the work is vibecoded), and I think the big strides taken in the past ten
-        years by the Linux desktop have proven that free software communities can create high-quality consumer software.
-    </p>
-    <p>Generally, as time's gone on the feasibility of free Android ROMs has been more and more difficult. Google's
-        regularly slashed the update cadence of their publicly available security patches, and whereas once upon a time
-        AOSP would have several high-quality apps in them, now new app development is mostly kept as nonfree Google
-        additions. It remains to be seen whether the new sideloading lockdowns will strike a big blow to the degoogled
-        Android ecosystem (remember - even if our degoogled ROMs don't lock down on sideloading, the loss of
-        accessibility could damage the health of projects like F-Droid and NewPipe). In any case, I hope you don't think
-        me too hasty in seeing this as a bit of a sinking ship. Mobile Linux matters.</p>
-    <p>The success of free software initiatives have often depended on our ability to rise to crises. When Windows users
-        railed against AI slop changes and the deprecation of Windows 10, we were able to step in with a high-quality
-        operating system to offer. Now that European governments are realising the insanity of having most of their
-        critical infrastructure rely on American companies, once again, Linux is ready to step in.</p>
-    <p>Sometimes we fail - when Discord users railed against overbearing age attestation requirements, Matrix was not
-        well placed to step in - it currently lacks basic features like screen sharing with audio in calls, or server
-        roles. Hence, nothing changed.</p>
-    <p>What about when the next crisis in the mobile ecosystem happens? When Android pushes a user-hostile update that
-        the degoogled ROMs are unable to counter, will mobile Linux be able to step up?</p>
-    <p>I hope the answer is yes, and I'm gonna throw some money towards postmarketOS. In a year, I'll write a second
-        blog post assessing whether the following areas have improved:</p>
-    <ul>
-        <li>Driver support (speakers, microphone, mobile data, BlueTooth, fingerprint, NFC, camera)</li>
-        <li>Ease of dual booting pmOS and Android.</li>
-        <li>Waydroid support</li>
-        <li>UI look and feel</li>
-        <li>Chatty polish</li>
-    </ul>
-    </div>
+                <p>Many other gestures and interactions feel unpolished in a way that I don't have the UI skills to reliably
+                    identify.</p>
+                <p>Copy-paste is also a bit of a mess. Different apps and system dialogues seem to have different avenues for
+                    copy-pasting. Some don't seem to be copy-pastable at all, and those differences are just across GNOME apps! In
+                    particular, I've found no way to paste a password into GNOME Online Accounts. Even just a paste button in the
+                    on-screen keyboard would provide a big improvement, but of course I'd really like to see a standard system text
+                    popup menu. I don't have the technical knowledge on Wayland and the XDG Desktop Portals to know what that looks
+                    like architecturally, but the current system isn't very good IMO.</p>
+                <h3>Misc</h3>
+                <p>Chatty isn't a very complete piece of software as it stands. Notably, it includes Matrix messaging features, but
+                    doesn't seem to be able to handle encrypted messaging at all. To an extent, non-Element Matrix clients lagging
+                    behind is pretty expected, but this feels like a pretty basic feature to not have working, especially for
+                    something installed out of the box.</p>
+                <p>The UI allows setting a pin, and actively encourages it with a numpad password box. However, setting the password
+                    to something with letters still has the login screen bring up a numpad by default, creating a number PIN with a
+                    fairly normal amount of digits for a phone PIN will be rejected by the OS, and upon switching from the numpad to
+                    the keyboard in the login screen, you can't go back without reentering the login screen.</p>
+                <p>Phosh gives you a popup asking about USB developer mode on the plugging in of any USB cable, even a dumb power
+                    cable.</p>
+                <h2>Conclusion</h2>
+                <p>With the mobile data, driver, and Waydroid issues unfortunately I don't think I can stick with postmarketOS for
+                    now. But I'm hopeful for the future! There's been a lot of movement on mainline drivers for FP6 recently
+                    (although from what I gather a lot of the work is vibecoded), and I think the big strides taken in the past ten
+                    years by the Linux desktop have proven that free software communities can create high-quality consumer software.
+                </p>
+                <p>Generally, as time's gone on the feasibility of free Android ROMs has been more and more difficult. Google's
+                    regularly slashed the update cadence of their publicly available security patches, and whereas once upon a time
+                    AOSP would have several high-quality apps in them, now new app development is mostly kept as nonfree Google
+                    additions. It remains to be seen whether the new sideloading lockdowns will strike a big blow to the degoogled
+                    Android ecosystem (remember - even if our degoogled ROMs don't lock down on sideloading, the loss of
+                    accessibility could damage the health of projects like F-Droid and NewPipe). In any case, I hope you don't think
+                    me too hasty in seeing this as a bit of a sinking ship. Mobile Linux matters.</p>
+                <p>The success of free software initiatives have often depended on our ability to rise to crises. When Windows users
+                    railed against AI slop changes and the deprecation of Windows 10, we were able to step in with a high-quality
+                    operating system to offer. Now that European governments are realising the insanity of having most of their
+                    critical infrastructure rely on American companies, once again, Linux is ready to step in.</p>
+                <p>Sometimes we fail - when Discord users railed against overbearing age attestation requirements, Matrix was not
+                    well placed to step in - it currently lacks basic features like screen sharing with audio in calls, or server
+                    roles. Hence, nothing changed.</p>
+                <p>What about when the next crisis in the mobile ecosystem happens? When Android pushes a user-hostile update that
+                    the degoogled ROMs are unable to counter, will mobile Linux be able to step up?</p>
+                <p>I hope the answer is yes, and I'm gonna throw some money towards postmarketOS. In a year, I'll write a second
+                    blog post assessing whether the following areas have improved:</p>
+                <ul>
+                    <li>Driver support (speakers, microphone, mobile data, BlueTooth, fingerprint, NFC, camera)</li>
+                    <li>Ease of dual booting pmOS and Android.</li>
+                    <li>Waydroid support</li>
+                    <li>UI look and feel</li>
+                    <li>Chatty polish</li>
+                </ul>
+                </div>
