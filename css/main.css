@@ -22,6 +22,8 @@ body {
     text-align: center;
     font-size: 1.17em;
     font-weight: bold;
+    padding-top: 9px;
+    padding-bottom: 9px;
 }
 
 .header {
@@ -111,6 +113,12 @@ nav.links {
     padding: 5px;
     border: 2px solid var(--red);
     border-radius: 5px;
+}
+
+.links a {
+    font-size: 1.07em;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 @font-face {
@@ -219,4 +227,14 @@ ul.video-sidebyside {
 
 .skip-content:focus {
     transform: translateY(0%);
+}
+
+.project-header img {
+    height: 1.2em;
+    width: auto;
+    padding: 5px;
+}
+
+.project-header h4 {
+    padding: 5px;
 }
